@@ -26,7 +26,7 @@ public class ProducerAPI {
 
 
         for (int i = 0; i <= 30; i++) {
-            Transaction transaction = new Transaction(i, UUID.randomUUID().toString(), new BigDecimal(i * 10));
+            Transaction transaction = new Transaction(i, UUID.randomUUID().toString(), new BigDecimal(i * 100));//300
             ProducerRecord<Integer, Transaction> record = new ProducerRecord<>(TOPIC_NAME, i, transaction);
             producer.send(record);
 
